@@ -33,6 +33,7 @@ html{
     font-size: 12vmin;
     color: #d161ff;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 #restart{
     font-size: 1.3em;
@@ -66,6 +67,7 @@ html{
     font-size: 0.6em;
     border-radius: 0.2em;
     border: none;
+    cursor: pointer;
 }
 #message{
     color: #ffffff;
