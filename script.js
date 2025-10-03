@@ -32,6 +32,20 @@ const enableButtons=()=>{
     popupRef.classList.add("hide");
 }
 
+const winFunction=(letter)=>{
+    disableButtons();
+    if(letter=="X"){
+        msgRef.innerHTML="&#x1F389; <br> 'X' Wins";
+    }else{
+        msgRef.innerHTML="&#x1F389; <br> 'O' Wins";
+    }
+}
+
+const drawFunction=()=>{
+    disableButtons();
+    msgRef.innerHTML="&#x1f60E; <br> It's a Draw";
+}
+
 newgameBtn.addEventListener("click",()=>{
     count=0;
     enableButtons();
@@ -40,11 +54,6 @@ restartBtn.addEventListener("click",()=>{
     count=0;
     enableButtons();
 });
-
-
-const winFunction = (letter) => {
-  disableButtons();
-};
 
 //win logic
 const winChecker = () => {
@@ -75,8 +84,11 @@ btnRef.forEach((element) => {
       element.disabled = true;
     }
     count += 1;
-    if (count === 9) {
+    if (count == 9) {
+        drawFunction();
     }
     winChecker();
   });
 });
+
+window.onload=enableButtons;
